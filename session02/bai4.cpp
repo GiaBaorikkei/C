@@ -1,9 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-	int n;
-	int arr[n];
-	
+int main() {
+    int n;
     printf("Nhap so phan tu cua mang (0 < n <= 100): ");
     scanf("%d", &n);
 
@@ -12,18 +10,23 @@ int main(){
         return 1;
     }
 
+    int arr[n];
     printf("Nhap cac phan tu cua mang:\n");
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
-    }	
-    
-    for (int i = 0; i < n / 2; i++) {
-         int temp = arr[i];
-         arr[i] = arr[n - i - 1];
-         arr[n - i - 1] = temp;
-     }
-     
-    printf("Mang sau khi dao nguoc: ");
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    printf("Mang sau khi sap xep: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
