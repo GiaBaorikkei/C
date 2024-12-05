@@ -25,7 +25,6 @@ int main() {
         scanf("%d", &arr2[i]);
     }
 
-    // G?p hai m?ng
     for (int i = 0; i < n; i++) {
         arr3[i] = arr1[i];
     }
